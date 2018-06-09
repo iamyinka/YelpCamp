@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+<style media="screen">
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+</style>
+
+<header class="jumbotron text-center">
+  <h1>Welcome to Yelp Camp Grounds</h1>
+  <p>
+    <a href="/campgrounds/new" class="btn btn-success btn-lg">Add New Campground</a>
+  </p>
+</header>
+
+<div class="row">
+  <% campgrounds.forEach(function(campground){ %>
+    <div class="col-sm-4 text-center">
+      <h4><%= campground.name %></h4>
+      <img src="<%= campground.image %>" alt="">
+    </div>
+  <% }) %>
+</div>
+
+<% include partials/footer %>
